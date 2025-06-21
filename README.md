@@ -4,30 +4,21 @@
 
 This project demonstrates a complete DevSecOps lifecycle by deploying a Zomato Clone using modern DevOps tools, infrastructure automation, security scanning, continuous deployment, and monitoring on AWS. The tech stack includes:
 
-Terraform – Infrastructure as Code for provisioning AWS resources.
-
-GitHub – Source code and pipeline scripts repository.
-
-Jenkins – CI/CD automation.
-
-SonarQube – Code quality analysis.
-
-Trivy – Security vulnerability scanning.
-
-NPM – Dependency management and build tool for Node.js.
-
-Docker – Image containerization.
-
-AWS ECR & EKS – Image storage and orchestration with Kubernetes.
-
-ArgoCD – GitOps-based deployment.
-
-Prometheus & Grafana – Cluster monitoring.
+- Terraform – Infrastructure as Code for provisioning AWS resources.
+- GitHub – Source code and pipeline scripts repository.
+- Jenkins – CI/CD automation.
+- SonarQube – Code quality analysis.
+- Trivy – Security vulnerability scanning.
+- NPM – Dependency management and build tool for Node.js.
+- Docker – Image containerization.
+- AWS ECR & EKS – Image storage and orchestration with Kubernetes.
+- ArgoCD – GitOps-based deployment.
+- Prometheus & Grafana – Cluster monitoring.
 
 ## Prerequisites
 
 - AWS CLI configured with IAM user (access and secret keys).
-- Terraform installed.
+- Terraform is installed.
 
 ## Step 1: Infrastructure Setup with Terraform
 
@@ -68,7 +59,7 @@ Creates an EKS cluster for container orchestration.
 - Default credentials: `admin/admin`
 - Create a token from **Administration → Security → Users → Tokens**.
 - Add a webhook in SonarQube:
-- URL: `http://<jenkins-url>:8080/sonarqube-webhook/`
+   - URL: `http://<jenkins-url>:8080/sonarqube-webhook/`
 
 ### Step 3: Jenkins Configuration
 

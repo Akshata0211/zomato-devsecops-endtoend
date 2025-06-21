@@ -15,7 +15,7 @@ provider "aws" {
 resource "aws_security_group" "my-sg" {
   name        = "JENKINS-SERVER-SG"
   description = "Jenkins Server Ports"
-  vpc_id = "vpc-0bc0087e9480dd2d2"
+  vpc_id = var.vpc_id
   
   # Port 22 is required for SSH Access
   ingress {
@@ -140,6 +140,7 @@ resource "aws_instance" "my-ec2" {
   instance_type = var.instance_type
   key_name      = var.key_name        
   vpc_security_group_ids = [aws_security_group.my-sg.id]
+  subnet_id = var.subnet_id
   
   root_block_device {
     volume_size = var.volume_size

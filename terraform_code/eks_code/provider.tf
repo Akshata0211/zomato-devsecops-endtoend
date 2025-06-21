@@ -1,3 +1,17 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.46"
+    }
+  }
+}
+
+provider "aws" {
+  region = "us-east-1"
+}
+
+
 locals {
   region = "us-east-1"
   name   = "zomato-cluster"
@@ -9,8 +23,4 @@ locals {
   tags = {
     Example = local.name
   }
-}
-
-provider "aws" {
-  region = "us-east-1"
 }
